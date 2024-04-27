@@ -8,5 +8,7 @@ diretório Images foi pego do repositório d4r1us-drk/images. (Não esta mais di
 Wayland: 
   1. https://github.com/philj56/tofi
 
-X:
+X: (https://github.com/gh0stzk/dotfiles#cynthia)
   1. https://github.com/davatorium/rofi
+  2. https://github.com/baskerville/bspwm
+  3. https://github.com/baskerville/sxhkd
