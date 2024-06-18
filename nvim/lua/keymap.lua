@@ -1,0 +1,31 @@
+local M = {}
+
+function M.default()
+	vim.keymap.set('n', '<leader>sn', '<cmd>set noet<CR>')
+	vim.keymap.set('n', '<leader>se', '<cmd>set expandtab<CR>')
+	vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>')
+	vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>')
+	vim.keymap.set('n', '<leader>st', '<cmd>Neotree toggle<CR>')
+	vim.keymap.set('n', '<leader>sb', '<cmd>Neotree buffers reveal float<CR>')
+end
+function M.on_attach()
+	vim.keymap.set('n','K',vim.lsp.buf.hover, {buffer=0})
+	vim.keymap.set('n','gd',vim.lsp.buf.definition, {buffer=0})
+	vim.keymap.set('n','gT',vim.lsp.buf.type_definition, {buffer=0})
+	vim.keymap.set('n','gi',vim.lsp.buf.implementation, {buffer=0})
+	vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+	vim.keymap.set('n','<Leader>dsl','<cmd>Telescope diagnostics<cr>', {buffer=0})
+	vim.keymap.set('n', '<leader>dgs', '<cmd>lua vim.diagnostic.open_float()<CR>')
+	vim.keymap.set('n','<Leader>R','<cmd>Telescope lsp_references<cr>', {buffer=0})
+	vim.keymap.set('n','<Leader>r',vim.lsp.buf.rename, {buffer=0})
+	vim.keymap.set('n','<Leader>F',function() vim.lsp.buf.format({timeout_ms=10000}) end, {buffer=0})
+	vim.keymap.set('n', '<leader>dd', '<cmd>lua require("dapui").toggle()<CR>')
+	vim.keymap.set('n', '<leader>df', '<cmd>lua require("dapui").float_element()<CR>')
+	vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<CR>')
+	vim.keymap.set('n', '<leader>dt', '<cmd>DapTerminate<CR>')
+	vim.keymap.set('n', '<leader>dj', '<cmd>DapStepInto<CR>')
+	vim.keymap.set('n', '<leader>dl', '<cmd>DapStepOver<CR>')
+	vim.keymap.set('n', '<leader>dk', '<cmd>DapStepOut<CR>')
+	vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>')
+end
+return M
